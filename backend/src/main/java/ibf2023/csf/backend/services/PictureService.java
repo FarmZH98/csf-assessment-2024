@@ -30,7 +30,8 @@ public class PictureService {
 
 		long sizeAllowed = Long.parseLong(sizeRaw) * 1024 * 1024; //convert to Bytes
 
-		long allImagesSize = imageRepo.getSizeOfImagesInCurrentMonth(); //check from s3
+		//check image size from s3
+		long allImagesSize = imageRepo.getSizeOfImagesInCurrentMonth(); 
 
 		System.out.println(">>>> all Images Size: " + allImagesSize);
 
@@ -45,5 +46,10 @@ public class PictureService {
 
 		return upload.get_id();
 	}
+
+	//note:
+	//to calculate from mongo, a few steps should be done:
+	//1. Upload should contain size of file
+	//2. query directly from mongo on the size + date. add all size and reply.
 
 }

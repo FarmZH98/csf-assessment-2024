@@ -46,12 +46,13 @@ export class MainComponent implements OnInit, OnDestroy {
   }
 
   //unable to set appropriate height and width
+  //according to ngx webcam github issues: https://github.com/basst314/ngx-webcam/issues/45, 
+  //my pc is unable to save different size due to webcam constraint, i tried to save using 320x240 and it works
   snapshot(webcamImg: WebcamImage) {
-    //console.log("height>>>" + webcamImg.imageData.toString())
-    //console.log("width>>>" + webcamImg.imageData.width)
+    console.log("height>>>" + webcamImg.imageData.height)
+    console.log("width>>>" + webcamImg.imageData.width)
     //console.log("width: " + this.width + ", height:" + this.height)
     this.uploadSvc.imageData = webcamImg.imageAsDataUrl;
-    
     this.router.navigate(['/pic'])//route to view 2
   }
 

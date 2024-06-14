@@ -80,6 +80,7 @@ public class ImageRepository {
         return size;
     }
 
+    //https://stackoverflow.com/questions/26824020/java-check-if-a-given-date-is-within-current-month
     private boolean isCurrentMonth(Date date) {
         //Create 2 instances of Calendar
         Calendar cal1 = Calendar.getInstance();
