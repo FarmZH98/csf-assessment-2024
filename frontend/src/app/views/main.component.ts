@@ -28,7 +28,6 @@ export class MainComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
       this.webcam.trigger = this.trigger;
-      //this.webcam.captureImageData = true;
       this.sub$ = this.webcam.imageCapture.subscribe(
         this.snapshot.bind(this)
       )

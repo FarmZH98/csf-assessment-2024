@@ -28,7 +28,7 @@ public class PictureService {
 	// You may throw any exception 
 	public String save(MultipartFile picture, Upload upload) throws IOException {
 
-		long sizeAllowed = Long.parseLong(sizeRaw) * 1024 * 1024; //convert to Bytes
+		long sizeAllowed = Long.parseLong(sizeRaw) * 1024 * 1024; //convert from MB to Bytes
 
 		//check image size from s3
 		long allImagesSize = imageRepo.getSizeOfImagesInCurrentMonth(); 
