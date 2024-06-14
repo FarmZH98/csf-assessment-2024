@@ -16,7 +16,7 @@ export class UploadService {
   upload(form :  any , picture: Blob){
     const formData = new FormData();
     formData.set("title", form['title']);
-    formData.set("comments", form['complain']);
+    formData.set("comments", form['comments']);
     formData.set("picture", picture);
     formData.set("datetime", (new Date()).toString() )
     

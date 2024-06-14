@@ -30,7 +30,7 @@ public class UploadController {
 	// You cannot remove any any existing annotations and parameters from postUpload()
 	@PostMapping(path="/image/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 	public ResponseEntity<String> postUpload(@RequestPart("title") String title,
-	@RequestPart("comments") String comments,
+	@RequestPart(required=false) String comments,
 	@RequestPart("datetime") String datetime,
 	@RequestPart("picture") MultipartFile picture) throws IOException {
 

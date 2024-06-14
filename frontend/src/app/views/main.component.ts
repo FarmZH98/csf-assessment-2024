@@ -28,6 +28,7 @@ export class MainComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
       this.webcam.trigger = this.trigger;
+      //this.webcam.captureImageData = true;
       this.sub$ = this.webcam.imageCapture.subscribe(
         this.snapshot.bind(this)
       )
@@ -39,33 +40,16 @@ export class MainComponent implements OnInit, OnDestroy {
       //this.sub$.unsubscribe();
   }
 
-  // size1() {
-  //   this.height = 282
-  //   this.webcam.height=282
-  // }
-
-  // size2() {
-  //   this.height = 375
-  //   this.webcam.height=375
-  // }
-
-  // size3() {
-  //   this.height = 333
-  //   this.webcam.height=333
-  // }
-
-  // size4() {
-  //   this.height = 500
-  //   this.webcam.height=500
-  // }
 
   snap(){
     this.trigger.next();
   }
 
+  //unable to set appropriate height and width
   snapshot(webcamImg: WebcamImage) {
-    //consider changing this to param and send to pic
-    console.log("width: " + this.width + ", height:" + this.height)
+    //console.log("height>>>" + webcamImg.imageData.toString())
+    //console.log("width>>>" + webcamImg.imageData.width)
+    //console.log("width: " + this.width + ", height:" + this.height)
     this.uploadSvc.imageData = webcamImg.imageAsDataUrl;
     
     this.router.navigate(['/pic'])//route to view 2

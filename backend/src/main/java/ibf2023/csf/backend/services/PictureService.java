@@ -30,7 +30,7 @@ public class PictureService {
 
 		long sizeAllowed = Long.parseLong(sizeRaw) * 1024 * 1024; //convert to Bytes
 
-		long allImagesSize = imageRepo.getSizeOfImagesInCurrentMonth();
+		long allImagesSize = imageRepo.getSizeOfImagesInCurrentMonth(); //check from s3
 
 		System.out.println(">>>> all Images Size: " + allImagesSize);
 
