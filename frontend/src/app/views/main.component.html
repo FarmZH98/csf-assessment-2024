@@ -1,0 +1,31 @@
+<!-- View 1 -->
+<div>
+    <webcam [trigger]="trigger" [width]="width" [height]="height" (imageCapture)="snapshot($event)" imageType="image/png">
+    </webcam>
+</div>
+
+<div>
+    <p>Aspect</p>
+    <!-- <input type="radio" id="options1" [(ngModel)]="height" value="282">
+    <input type="radio" id="size" name="fav_language" value="282" [defaultChecked]="true">
+    <label for="size">16:9</label>  
+    <input type="radio" id="size" name="fav_language" value="375">
+    <label for="size">4:3</label>  
+    <input type="radio" id="size" name="fav_language" value="333">
+    <label for="size">3:2</label>  
+    <input type="radio" id="size" name="fav_language" value="500">
+    <label for="size">1:1</label>   -->
+    <input type="radio" name="height" value="282" (change) = "height = 282" [defaultChecked]="true"> 16:9 
+    <input type="radio" name="height" value="375" (change) = "height = 375"> 4:3 
+     <input type="radio" name="height" value="333" (change) = "height = 333"> 3:2
+     <input type="radio" name="height" value="500" (change) = "height = 500"> 1:1
+    <!-- <button type="radio" (click)="size1()" default="true">16:9</button>
+    <button type="radio" (click)="size2()" >4:3</button>
+    <button type="radio" (click)="size3()">3:2</button>
+    <button type="radio" (click)="size4()">1:1</button> -->
+</div>
+
+<div>
+    <button type="button" (click)="snap()">Snap</button>
+</div>
+
